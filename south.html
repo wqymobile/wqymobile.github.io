@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>畅乐互动</title>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font: 12px "宋体";
+            background: #f7f7f7;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+            color: #555;
+        }
+
+        .float_l {
+            float: left;
+        }
+
+        .float_r {
+            float: right;
+        }
+
+        .clearfix:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .kuandu {
+            width: 1090px;
+            margin: auto
+        }
+
+        .dis_inB {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: top;
+            letter-spacing: normal;
+        }
+
+        /* nav */
+
+        .top {
+            height: 55px;
+            width: 100%;
+            padding: 20px;
+            background: #313131;
+        }
+
+        .nav {
+            margin-left: 300px;
+        }
+
+        .nav ul li {
+            float: left;
+            padding: 20px;
+            font-size: 16px;
+            font-family: "微软雅黑"
+        }
+
+        .nav ul li a {
+            color: #a9a9a9;
+        }
+
+        .nav ul li a:hover {
+            color: #54ddff;
+        }
+
+        .logo img {
+            width: 200px;
+        }
+
+        /*-------banner样式-------*/
+
+        .banner {
+            height: 800px;
+            position: relative;
+            overflow: hidden;
+            top: 0px;
+            width: 1920px;
+            margin: 0 auto;
+        }
+
+        .banner ul {
+            position: absolute;
+        }
+
+        #productMenu {
+            bottom: 5px;
+            right: 50%;
+        }
+
+        .menu_yuan li {
+            float: left;
+            background: url(../images/l.gif) no-repeat;
+            width: 14px;
+            height: 14px;
+            text-align: center;
+            margin-right: 3px;
+            color: #fff;
+            text-indent: -9999px;
+        }
+
+        .menu_yuan li.vary_img {
+            background: url(../images/h.gif) no-repeat;
+        }
+
+        #productImg ul li {
+            width: auto;
+            height: 522px;
+            display: none;
+        }
+
+        #productImg ul li img {
+            width: auto;
+            height: 522px;
+        }
+
+        .one {
+            margin-top: 100px;
+        }
+
+        .one .news {
+            width: 527px;
+        }
+
+        .one .new_tit {
+            font-size: 18px;
+            font-family: "微软雅黑";
+            color: #646464;
+            border-bottom: 1px solid #cccccc;
+            padding: 10px 0px;
+        }
+
+        .mor {
+            height: 21px;
+            width: 43px;
+            background: #c8ffd4;
+            text-align: center;
+            color: #35bb63
+        }
+
+        .mor a {
+            color: #35bb63
+        }
+
+        .new_con li {
+            width: 233px;
+            text-align: center;
+            font-family: "微软雅黑";
+            padding: 15px;
+        }
+
+        .new_con li img {
+            width: 103px;
+        }
+
+        .new_con li p {
+            padding: 10px;
+            margin-top: 8px;
+        }
+
+        .new_con_01 {
+            font-size: 14px;
+            line-height: 30px;
+            padding-top: 20px;
+        }
+
+        .foot {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            zoom: 1;
+            text-align: center;
+            margin-top: 72px;
+            background: #EDEDED;
+            padding: 20px;
+            line-height: 20px;
+        }
+
+        /* 内容页 */
+
+        .banner_01 {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .main_01 {
+            padding: 58px 0px;
+        }
+
+        .nav_title {
+            border-bottom: 1px solid #ccc;
+            width: 160px;
+            padding: 12px 0px;
+            font: 12px "微软雅黑";
+        }
+
+        .nav_cont {
+            width: 799px;
+            margin-left: 130px;
+            line-height: 30px;
+            color: #999;
+        }
+
+        /*-------tab切换-------*/
+
+        .bbs_h_03 {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .gonglue_03 p {
+            font-size: 16px;
+            line-height: 30px;
+            color: #666;
+        }
+
+        .bbs_c_03 {
+            display: none;
+            padding: 15px;
+        }
+
+        .bbs_h_03 li {
+            cursor: pointer;
+            background: url(../images/xy_03.png) no-repeat;
+            height: 35px;
+            padding: 0 15px;
+            color: #000;
+            text-align: center;
+            font: 16px "微软雅黑";
+            line-height: 30px;
+            color: #666
+        }
+
+        .bbs_h_03 .vary_03 {
+            height: 34px;
+            font-weight: bolder;
+            background: #b6f0fd;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="top">
+        <div class="kuandu  clearfix">
+            <div class="float_l logo">
+                <img src="images/logo_2.png">
+            </div>
+            <div class="float_l nav">
+                <ul class="nav_main clearfix">
+                    <li><a href="index.html">网站首页</a></li>
+                    <li><a href="about.html">公司简介</a></li>
+                    <li><a href="join.html">商务合作</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--banner开始-->
+    <div class="banner">
+        <ul id="productImg">
+            <li><img src="images/bg_01.png" /></li>
+            <li><img src="images/bg_02.png" /></li>
+
+        </ul>
+
+        <script type="text/javascript">
+            <!--
+            $(document).ready(function() {
+                var currentIndex = 0;
+                var DEMO;
+                var currentID = 0;
+                var pictureID = 0;
+                $("#productImg li").eq().show();
+                autoScroll();
+                $("#productMenu li").hover(function() {
+                    StopScrolll();
+                    $("#productMenu li").removeClass("vary_img")
+                    $(this).addClass("vary_img");
+                    currentID = $(this).attr("id");
+                    pictureID = currentID.substring(currentID.length - 1);
+                    $("#productImg li").eq(pictureID).fadeIn("slow");
+                    $("#productImg li").not($("#productImg li")[pictureID]).hide();
+                }, function() {
+                    currentID = $(this).attr("id");
+                    pictureID = currentID.substring(currentID.length - 1);
+                    currentIndex = pictureID;
+                    autoScroll();
+                });
+                //自动滚动
+                function autoScroll() {
+                    $("#productMenu li:last").removeClass("vary_img");
+                    $("#ifocus_tx li:last").hide();
+                    $("#productMenu li").eq(currentIndex).addClass("vary_img");
+                    $("#productMenu li").eq(currentIndex - 1).removeClass("vary_img");
+                    $("#ifocus_tx li").eq(currentIndex).show();
+                    $("#ifocus_tx li").eq(currentIndex - 1).hide(400);
+                    $("#productImg li").eq(currentIndex).fadeIn("slow");
+                    $("#productImg li").eq(currentIndex - 1).hide();
+                    currentIndex++;
+                    currentIndex = currentIndex >= 2 ? 0 : currentIndex;
+                    DEMO = setTimeout(autoScroll, 4000);
+                }
+
+                function StopScrolll() //当鼠标移动到对象上面的时候停止自动滚动
+                {
+                    clearTimeout(DEMO);
+                }
+            });
+            -->
+        </script>
+    </div>
+    <!--banner结束-->
+    <!--banner结束-->
+
+    <div class="kuandu clearfix main_01">
+        <b style=" line-height:30px; font-size:16px;">我们诚邀您的参与，携手共进。 合肥畅乐互动信息技术有限公司欢迎任何团队，个人和企业形式进行合作洽谈，推动彼此的进步发展。</b></br>
+
+        <p style="line-height:30px;font-size:16px;">通讯地址:</br>
+            安徽省合肥市蜀山区金寨路71号科茂大厦二层</p>
+
+    </div>
+    <div class="foot">
+
+        <p>本网络游戏适合16+岁的用户使用；为了您的健康，请合理控制游戏时间</p>
+        <p>健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防上当受骗。适度游戏益脑，沉迷游戏伤身。合理安排游戏时间，享受健康生活</p>
+        <p>
+            Copyright © 2017 合肥畅乐互动信息技术有限公司 版权所有&nbsp;|&nbsp;&nbsp;皖网文【2017】 3923-044号&nbsp;|&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index" style=" color:#757677;">备案号：皖B2-20190040-1</a> </p>
+
+
+    </div>
+
+
+</body>
+
+</html>
